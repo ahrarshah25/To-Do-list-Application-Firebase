@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - TaskFlow</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./login.css" />
+    <link rel="stylesheet" href="../SweetAlert/swal.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-left">
+        <div class="login-content">
+          <a href="/" class="back-home">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+          </a>
+
+          <div class="login-header">
+            <a href="/" class="logo">
+              <i class="fas fa-tasks"></i>
+              <span>TaskFlow</span>
+            </a>
+            <h1>Welcome Back</h1>
+            <p>Sign in to continue to your task management dashboard</p>
+          </div>
+
+          <form class="login-form" id="loginForm">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <div class="input-with-icon">
+                <i class="fas fa-envelope"></i>
+                <input
+                  type="text"
+                  id="userEmail"
+                  placeholder="Enter your email"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-with-icon">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  id="userPassword"
+                  placeholder="Enter your password"
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  id="togglePassword"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="password-options">
+                <label class="remember-me">
+                  <input type="checkbox" id="remember" />
+                  <span>Remember me</span>
+                </label>
+                <a href="/forgot-password" class="forgot-password"
+                  >Forgot Password?</a
+                >
+              </div>
+            </div>
+
+            <button id="loginBtn" type="submit" class="btn-login">
+              <i class="fas fa-sign-in-alt"></i>
+              Sign In
+            </button>
+
+            <div class="divider">
+              <span>Or continue with</span>
+            </div>
+
+            <button id="googleBtn" type="button" class="btn-google">
+              <i class="fab fa-google"></i>
+              Sign in with Google
+            </button>
+
+            <div class="signup-link">
+              Don't have an account? <a href="/signup">Sign up now</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="login-footer">
+          <p>
+            &copy; TaskFlow | 2026 - <span id="currentYear">2026</span> | All
+            Rights Reserved
+          </p>
+          <p>
+            Made By
+            <a href="https://ahrar-shah.vercel.app" target="_blank"
+              >Ahrar Shah</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="login-right">
+        <div class="right-content">
+          <div class="feature-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Boost Your Productivity</h3>
+            <p>Join thousands who manage tasks efficiently with TaskFlow</p>
+          </div>
+
+          <div class="feature-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Secure & Private</h3>
+            <p>Your data is protected with Firebase security standards</p>
+          </div>
+
+          <div class="feature-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-sync-alt"></i>
+            </div>
+            <h3>Sync Across Devices</h3>
+            <p>Access your tasks anywhere, anytime</p>
+          </div>
+
+          <div class="testimonial">
+            <div class="quote">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                TaskFlow transformed how I manage my daily tasks. The clean
+                interface and powerful features helped me increase my
+                productivity by 40%.
+              </p>
+            </div>
+            <div class="author">
+              <div class="author-avatar">AS</div>
+              <div class="author-info">
+                <h4>Ahrar Shah</h4>
+                <p>Full Stack Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./login.js"></script>
+</html>

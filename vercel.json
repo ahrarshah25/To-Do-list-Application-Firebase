@@ -1,0 +1,28 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/Landing Page/index.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/Admin Dashboard/admin.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/User Dashboard/dashboard.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/Login Page/login.html"
+    },
+    {
+      "source": "/signup",
+      "destination": "/Signup Page/signup.html"
+    },
+    {
+      "source": "/forgot-password",
+      "destination": "/Forgot Password/forgot-password.html"
+    }
+  ]
+}

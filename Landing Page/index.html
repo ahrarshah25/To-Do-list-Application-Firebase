@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Modern To-Do Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-tasks"></i>
+                <span>TaskFlow</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#">Home</a>
+                <a href="#">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">About</a>
+                
+                <div class="nav-buttons">
+                    <a href="/login" class="btn btn-outline">Login</a>
+                    <a href="/signup" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Organize Your Work <span>Effortlessly</span></h1>
+                <p>TaskFlow is a modern to-do application that helps you stay organized, focused, and productive. With a clean interface and powerful features, managing tasks has never been easier.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Get Started Free</a>
+                    <a href="#" class="btn btn-outline">Watch Demo</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title">Today's Tasks</div>
+                        <div><i class="fas fa-ellipsis-h"></i></div>
+                    </div>
+                    
+                    <div class="dashboard-content">
+                        <div class="task-item">
+                            <div class="task-checkbox completed"></div>
+                            <div class="task-text completed">Design homepage layout</div>
+                        </div>
+                        
+                        <div class="task-item">
+                            <div class="task-checkbox completed"></div>
+                            <div class="task-text completed">Write project proposal</div>
+                        </div>
+                        
+                        <div class="task-item">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">Team meeting at 3 PM</div>
+                        </div>
+                        
+                        <div class="task-item">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">Review quarterly report</div>
+                        </div>
+                        
+                        <div class="task-item">
+                            <div class="task-checkbox"></div>
+                            <div class="task-text">Plan marketing strategy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Powerful Features</h2>
+                <p>TaskFlow comes with everything you need to manage tasks effectively and boost your productivity.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Experience instant task updates and smooth interactions with our optimized performance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is protected with Firebase security and end-to-end encryption for peace of mind.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Sync Everywhere</h3>
+                    <p>Access your tasks from any device. Changes sync automatically across all platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-tasks"></i>
+                    <span>TaskFlow</span>
+                </a>
+                
+                <div class="footer-links">
+                    <a href="#">Home</a>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; TaskFlow | 2026 - <span id="currentYear">2026</span> | All Rights Reserved</p>
+                <p>Made By <a href="https://ahrar-shah.vercel.app" target="_blank">Ahrar Shah</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="./app.js"></script>
+</html>

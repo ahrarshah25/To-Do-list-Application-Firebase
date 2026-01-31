@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - TaskFlow</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./signup.css" />
+    <link rel="stylesheet" href="../SweetAlert/swal.css" />
+  </head>
+  <body>
+    <div class="signup-container">
+      <div class="signup-left">
+        <div class="signup-content">
+          <a href="/" class="back-home">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+          </a>
+
+          <div class="signup-header">
+            <a href="/" class="logo">
+              <i class="fas fa-tasks"></i>
+              <span>TaskFlow</span>
+            </a>
+            <h1>Create Your Account</h1>
+            <p>Join thousands of productive people using TaskFlow</p>
+          </div>
+
+          <form class="signup-form" id="signupForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <div class="input-with-icon">
+                <i class="fas fa-user"></i>
+                <input
+                  type="text"
+                  id="fullName"
+                  placeholder="Enter your full name"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <div class="input-with-icon">
+                <i class="fas fa-envelope"></i>
+                <input
+                  type="email"
+                  id="userEmail"
+                  placeholder="Enter your email"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-with-icon">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  id="userPassword"
+                  placeholder="Create a password"
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  id="togglePassword"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <div class="input-with-icon">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  placeholder="Confirm your password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  id="toggleConfirmPassword"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="terms-agreement">
+              <label class="checkbox-container">
+                <input type="checkbox" id="terms" />
+                <span class="checkmark"></span>
+                I agree to the <a href="#">Terms of Service</a> and
+                <a href="#">Privacy Policy</a>
+              </label>
+            </div>
+
+            <button id="signupBtn" type="submit" class="btn-signup">
+              <i class="fas fa-user-plus"></i>
+              Create Account
+            </button>
+
+            <div class="divider">
+              <span>Or sign up with</span>
+            </div>
+
+            <button id="googleBtn" type="button" class="btn-google">
+              <i class="fab fa-google"></i>
+              Sign up with Google
+            </button>
+
+            <div class="login-link">
+              Already have an account? <a href="/login">Sign in now</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="signup-footer">
+          <p>
+            &copy; TaskFlow | 2026 - <span id="currentYear">2026</span> | All
+            Rights Reserved
+          </p>
+          <p>
+            Made By
+            <a href="https://ahrar-shah.vercel.app" target="_blank"
+              >Ahrar Shah</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="signup-right">
+        <div class="right-content">
+          <div class="feature-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Boost Productivity</h3>
+            <p>Join thousands who manage tasks efficiently with TaskFlow</p>
+          </div>
+
+          <div class="feature-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Secure & Private</h3>
+            <p>Your data is protected with Firebase security standards</p>
+          </div>
+
+          <div class="feature-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-sync-alt"></i>
+            </div>
+            <h3>Sync Across Devices</h3>
+            <p>Access your tasks anywhere, anytime</p>
+          </div>
+
+          <div class="testimonial">
+            <div class="quote">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                "Signing up for TaskFlow was the best decision I made for my
+                productivity. The clean interface helps me focus on what matters
+                most."
+              </p>
+            </div>
+            <div class="author">
+              <div class="author-avatar">AS</div>
+              <div class="author-info">
+                <h4>Ahrar Shah</h4>
+                <p>Full Stack Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./signup.js"></script>
+</html>

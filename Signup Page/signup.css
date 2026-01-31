@@ -1,0 +1,518 @@
+:root {
+  --primary: #ff6b35;
+  --primary-dark: #e55a2b;
+  --primary-light: #ffe8e0;
+  --secondary: #ffffff;
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef;
+  --dark-gray: #6c757d;
+  --text: #212529;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  color: var(--text);
+  background-color: var(--secondary);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.signup-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 700px;
+  background: var(--secondary);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.signup-left {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.signup-right {
+  flex: 1;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8e53 100%);
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-right::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 30px 30px;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 40px;
+  transition: var(--transition);
+}
+
+.back-home:hover {
+  gap: 12px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.logo i {
+  font-size: 2rem;
+}
+
+.signup-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.signup-header p {
+  color: var(--dark-gray);
+  margin-bottom: 40px;
+}
+
+.signup-form {
+  margin-top: 30px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon i:first-of-type {
+  position: absolute;
+  left: 15px;
+  color: var(--dark-gray);
+  font-size: 1.1rem;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: 2px solid var(--medium-gray);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: var(--light-gray);
+}
+
+.input-with-icon input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: var(--dark-gray);
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 5px;
+  transition: var(--transition);
+}
+
+.toggle-password:hover {
+  color: var(--primary);
+}
+
+.terms-agreement {
+  margin: 20px 0;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text);
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: var(--light-gray);
+  border: 2px solid var(--medium-gray);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  border-color: var(--primary);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-container a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.checkbox-container a:hover {
+  text-decoration: underline;
+}
+
+.btn-signup {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-signup:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+  color: var(--dark-gray);
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--medium-gray);
+}
+
+.divider span {
+  padding: 0 15px;
+  font-size: 0.9rem;
+}
+
+.btn-google {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--secondary);
+  color: var(--text);
+  border: 2px solid var(--medium-gray);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.btn-google:hover {
+  border-color: var(--primary);
+  background-color: var(--light-gray);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+.btn-google i {
+  color: #db4437;
+  font-size: 1.2rem;
+}
+
+.login-link {
+  text-align: center;
+  color: var(--dark-gray);
+}
+
+.login-link a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.signup-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--medium-gray);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.signup-footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.right-content {
+  position: relative;
+  z-index: 1;
+}
+
+.feature-highlight {
+  margin-bottom: 40px;
+}
+
+.feature-icon {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.feature-icon i {
+  font-size: 1.8rem;
+}
+
+.feature-highlight h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.feature-highlight p {
+  opacity: 0.9;
+}
+
+.testimonial {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: var(--radius);
+  margin-top: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.quote {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.quote i:first-child {
+  font-size: 1.5rem;
+  opacity: 0.7;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.quote p {
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.author-info h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.author-info p {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+  .signup-container {
+    flex-direction: column;
+    max-width: 600px;
+    min-height: auto;
+  }
+
+  .signup-left,
+  .signup-right {
+    padding: 40px;
+  }
+
+  .signup-right {
+    order: -1;
+  }
+
+  .signup-left {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .signup-left,
+  .signup-right {
+    padding: 30px;
+  }
+
+  .signup-header h1 {
+    font-size: 2rem;
+  }
+
+  .btn-signup,
+  .btn-google {
+    padding: 14px;
+  }
+
+  .signup-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .signup-left,
+  .signup-right {
+    padding: 25px 20px;
+  }
+
+  .signup-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .input-with-icon input {
+    padding: 12px 12px 12px 40px;
+  }
+
+  .feature-highlight {
+    margin-bottom: 30px;
+  }
+
+  .testimonial {
+    padding: 20px;
+  }
+}
