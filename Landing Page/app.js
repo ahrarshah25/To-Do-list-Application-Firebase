@@ -1,4 +1,4 @@
-import { auth, getDoc, db, doc } from "../Firebase/config";
+import { auth, getDoc, db, doc } from "../Firebase/config.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
