@@ -75,7 +75,7 @@ onAuthStateChanged(auth, async (user) => {
 
   uid = user.uid;
   userEmail = user.email;
-  userName.textContent = user.displayName || user.email.split("@")[0];
+  userName.textContent = user.displayName;
 
   await loadUserData();
   await loadPosts();
