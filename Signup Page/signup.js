@@ -206,25 +206,27 @@ const signupUser = async () => {
   }
 };
 
+import { getDoc } from "../Firebase/config.js";
+
 const googleLogin = async () => {
   try {
     showLoading();
 
     const res = await signInWithPopup(auth, googleProvider);
-  
-  await setDoc(
-    doc(db, "users", res.user.uid),
-    {
-      email: res.user.email,
-      fullName: res.user.displayName || "",
-      role: "user",
-      isVerified: false,
-      createdAt: Date.now(),
-    },
-    { merge: true },
-  );
+    const userRef = doc(db, "users", res.user.uid);
+    const snap = await getDoc(userRef);
 
-  Swal.fire({
+    if (!snap.exists()) {
+      await setDoc(userRef, {
+        email: res.user.email,
+        fullName: res.user.displayName || "",
+        role: "user",
+        isVerified: false,
+        createdAt: Date.now(),
+      });
+    }
+
+    Swal.fire({
       toast: true,
       position: "top-end",
       icon: "success",
@@ -234,8 +236,10 @@ const googleLogin = async () => {
       customClass: {
         popup: "swal-margin-top",
       },
-    }).then(() => {window.location.href = "/login"})
-  
+    }).then(() => {
+      window.location.href = "/login";
+    });
+
   } catch (error) {
     Swal.fire({
       toast: true,
@@ -250,6 +254,7 @@ const googleLogin = async () => {
     });
   }
 };
+
 
 const signupBtn = document.getElementById("signupBtn");
 
