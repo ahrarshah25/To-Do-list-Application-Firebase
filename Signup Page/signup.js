@@ -6,6 +6,7 @@ import {
   signInWithPopup,
   doc,
   setDoc,
+  updateProfile
 } from "../Firebase/config.js";
 
 import emailHandler from "../helpers/emailHandler.js";
@@ -172,6 +173,10 @@ const signupUser = async () => {
       role: "user",
       isVerified: false,
       createdAt: Date.now(),
+    });
+
+    await updateProfile(res.user, {
+      displayName: userName.value,
     });
 
     Swal.fire({

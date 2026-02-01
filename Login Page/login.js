@@ -6,7 +6,7 @@ import {
   signInWithPopup,
   doc,
   getDoc,
-  setDoc,
+  setDoc
 } from "../Firebase/config.js";
 
 import emailHandler from "../helpers/emailHandler.js";

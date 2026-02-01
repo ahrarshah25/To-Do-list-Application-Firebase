@@ -8,7 +8,7 @@ const handleRedirect = async (userId) => {
   }
 
   const data = snap.data();
-  console.log(data);
+  // console.log(data);
   
 
   if (data.isVerified === false) {
@@ -33,7 +33,7 @@ const handleRedirect = async (userId) => {
       toast: true,
       position: "top-end",
       icon: "success",
-      title: "Welcome User.",
+      title: "Welcome Back, " + data.fullName,
       showConfirmButton: false,
       timer: 2000,
       customClass: {

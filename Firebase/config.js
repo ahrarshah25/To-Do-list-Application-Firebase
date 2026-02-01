@@ -9,6 +9,7 @@ import {
   sendPasswordResetEmail,
   onAuthStateChanged,
   signOut,
+  updateProfile
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 import {
   getFirestore,
@@ -67,4 +68,5 @@ export {
   where,
   orderBy,
   serverTimestamp,
+  updateProfile
 };
