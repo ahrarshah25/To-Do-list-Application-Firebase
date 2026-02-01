@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - TaskFlow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/User Dashboard/dashboard.css">
+    <link rel="stylesheet" href="/SweetAlert/swal.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="/" class="logo">
+                    <i class="fas fa-tasks"></i>
+                    <span>TaskFlow</span>
+                </a>
+                <div class="user-welcome">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <h3 id="userName">Loading...</h3>
+                        <p>Welcome back!</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendar</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <a href="/" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="quick-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4 id="completedCount">0</h4>
+                            <p>Completed</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4 id="pendingCount">0</h4>
+                            <p>Pending</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-logout" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <h1>My Tasks</h1>
+                    <p>Manage your daily tasks efficiently</p>
+                </div>
+                <div class="header-right">
+                    <div class="date-display">
+                        <i class="fas fa-calendar-day"></i>
+                        <span id="currentDate">Loading...</span>
+                    </div>
+                    <div class="task-summary">
+                        <i class="fas fa-tasks"></i>
+                        <div>
+                            <h3 id="totalTasks">0</h3>
+                            <p>Total Tasks</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="add-task-section">
+                    <div class="add-task-card">
+                        <h2><i class="fas fa-plus-circle"></i> Add New Task</h2>
+                        <div class="task-input-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-edit"></i>
+                                <input type="text" id="task" placeholder="What needs to be done?">
+                            </div>
+                            <button class="btn-add" id="addBtn">
+                                <i class="fas fa-plus"></i>
+                                Add Task
+                            </button>
+                        </div>
+                        <p class="input-hint">Press Enter or click Add Task to save</p>
+                    </div>
+
+                    <div class="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn" id="clearAllBtn">
+                                <i class="fas fa-trash"></i>
+                                Clear All
+                            </button>
+                            <button class="action-btn" id="markAllBtn">
+                                <i class="fas fa-check-double"></i>
+                                Mark All Done
+                            </button>
+                            <button class="action-btn" id="sortBtn">
+                                <i class="fas fa-sort"></i>
+                                Sort Tasks
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tasks-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-list-check"></i> My Tasks</h2>
+                        <div class="filter-options">
+                            <select id="filterSelect">
+                                <option value="all">All Tasks</option>
+                                <option value="today">Today</option>
+                                <option value="pending">Pending</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="searchTask" placeholder="Search tasks...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tasks-container" id="posts">
+                        <div class="loading-state">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading your tasks...</p>
+                        </div>
+                    </div>
+
+                    <div class="empty-state" id="emptyState" style="display: none;">
+                        <i class="fas fa-tasks"></i>
+                        <h3>No Tasks Yet</h3>
+                        <p>Add your first task to get started!</p>
+                        <button class="btn-empty" id="addFirstBtn">
+                            <i class="fas fa-plus"></i>
+                            Add First Task
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stats-card">
+                        <h3><i class="fas fa-chart-line"></i> Productivity Stats</h3>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <i class="fas fa-bolt"></i>
+                                <h4 id="todayTasks">0</h4>
+                                <p>Today's Tasks</p>
+                            </div>
+                            <div class="stat-box">
+                                <i class="fas fa-fire"></i>
+                                <h4 id="streakCount">0</h4>
+                                <p>Day Streak</p>
+                            </div>
+                            <div class="stat-box">
+                                <i class="fas fa-trophy"></i>
+                                <h4 id="completionRate">0%</h4>
+                                <p>Completion Rate</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recent-activity">
+                        <h3><i class="fas fa-history"></i> Recent Activity</h3>
+                        <div class="activity-list" id="activityList">
+                            <div class="activity-item">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Your activity will appear here</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="main-footer">
+                <p>&copy; TaskFlow | 2026 | All Rights Reserved</p>
+                <p>Made with <i class="fas fa-heart" style="color: #FF6B35;"></i> by <a href="https://ahrar-shah.vercel.app">Ahrar Shah</a></p>
+            </footer>
+        </main>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="/User Dashboard/dashboard.js"></script>
+</html>
